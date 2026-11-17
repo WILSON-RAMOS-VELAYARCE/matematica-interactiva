@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática Interactiva | Ecuaciones Cuadráticas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <div class="contenedor">
+            <h1>Matemática Interactiva</h1>
+            <p>Recurso educativo sobre Ecuaciones Cuadráticas (ax² + bx + c = 0)</p>
+        </div>
+    </header>
+
+    <nav class="navegacion">
+        <ul class="menu">
+            <li><a href="#teoria">Fundamento Teórico</a></li>
+            <li><a href="#calculadora">Calculadora Interactiva</a></li>
+            <li><a href="#multimedia">Video Explicativo</a></li>
+            <li><a href="#evaluacion">Autoevaluación</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor">
+        <!-- Sección 1: Teoría -->
+        <section id="teoria" class="tarjeta">
+            <h2>1. ¿Qué es una Ecuación Cuadrática?</h2>
+            <p>Una ecuación de segundo grado con una incógnita tiene la forma general:</p>
+            <div class="formula-destacada">ax² + bx + c = 0 &nbsp; (donde a ≠ 0)</div>
+            <p>Para hallar sus soluciones (raíces), utilizamos la fórmula general y analizamos el <strong>discriminante (Δ = b² - 4ac)</strong>:</p>
+            <ul class="lista-teoria">
+                <li><strong>Si Δ &gt; 0:</strong> Existen dos soluciones reales y diferentes.</li>
+                <li><strong>Si Δ = 0:</strong> Existe una única solución real (raíz doble).</li>
+                <li><strong>Si Δ &lt; 0:</strong> No existen soluciones en los números reales.</li>
+            </ul>
+        </section>
+
+        <!-- Sección 2: Interactividad con JavaScript -->
+        <section id="calculadora" class="tarjeta">
+            <h2>2. Calculadora de Raíces Cuadráticas</h2>
+            <p>Ingresa los coeficientes <strong>a</strong>, <strong>b</strong> y <strong>c</strong> para resolver la ecuación al instante:</p>
+            
+            <div class="grupo-inputs">
+                <div class="campo">
+                    <label for="coefA">Coeficiente a:</label>
+                    <input type="number" id="coefA" placeholder="Ej. 1" step="any">
+                </div>
+                <div class="campo">
+                    <label for="coefB">Coeficiente b:</label>
+                    <input type="number" id="coefB" placeholder="Ej. -5" step="any">
+                </div>
+                <div class="campo">
+                    <label for="coefC">Coeficiente c:</label>
+                    <input type="number" id="coefC" placeholder="Ej. 6" step="any">
+                </div>
+            </div>
+
+            <div class="botones-accion">
+                <button type="button" id="btnCalcular" class="btn-primario">Calcular Soluciones</button>
+                <button type="button" id="btnLimpiar" class="btn-secundario">Limpiar</button>
+            </div>
+
+            <div id="resultadoCalculadora" class="caja-resultado oculto"></div>
+        </section>
+
+        <!-- Sección 3: Multimedia y Formulario -->
+        <div class="fila-doble">
+            <section id="multimedia" class="tarjeta columna">
+                <h2>3. Refuerzo Audiovisual</h2>
+                <p>Observa cómo interpretar gráficamente la parábola de una función cuadrática:</p>
+                <div class="contenedor-video">
+                    <iframe src="https://www.youtube.com/embed/6JQw45YO3Fs" 
+                            title="Ecuaciones cuadráticas por fórmula general" 
+                            frameborder="0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <section id="evaluacion" class="tarjeta columna">
+                <h2>4. Comprueba lo Aprendido</h2>
+                <form id="formQuiz" novalidate>
+                    <div class="campo">
+                        <label for="nombreEstudiante">Nombre del estudiante:</label>
+                        <input type="text" id="nombreEstudiante" placeholder="Escribe tu nombre completo" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="respuestaQuiz">¿Cuáles son las soluciones de x² - 5x + 6 = 0?</label>
+                        <select id="respuestaQuiz" required>
+                            <option value="">-- Selecciona una respuesta --</option>
+                            <option value="incorrecto1">x₁ = -2, x₂ = -3</option>
+                            <option value="correcto">x₁ = 3, x₂ = 2</option>
+                            <option value="incorrecto2">x₁ = 5, x₂ = 6</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primario">Verificar Respuesta</button>
+                </form>
+
+                <div id="resultadoQuiz" class="caja-resultado oculto"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Desarrollado para el curso Desarrollo de Entornos Web (EMI308) — UPRIT 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

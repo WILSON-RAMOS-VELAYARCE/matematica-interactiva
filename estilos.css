@@ -1,0 +1,234 @@
+/* Estilos generales y paleta educativa */
+:root {
+    --color-primario: #8b1e3f;   /* Guinda institucional */
+    --color-secundario: #1e3a5f; /* Azul académico */
+    --color-fondo: #f4f6f9;
+    --color-texto: #2b2d42;
+    --color-blanco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Encabezado y Navegación con Flexbox */
+.encabezado {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.encabezado h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.navegacion {
+    background-color: var(--color-secundario);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Tarjetas de contenido */
+.tarjeta {
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta h2 {
+    color: var(--color-primario);
+    margin-bottom: 12px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 6px;
+}
+
+.formula-destacada {
+    background-color: #eef2f7;
+    border-left: 4px solid var(--color-secundario);
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.lista-teoria {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* Diseño Flexbox para inputs y columnas */
+.grupo-inputs {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.fila-doble {
+    display: flex;
+    gap: 20px;
+}
+
+.columna {
+    flex: 1;
+    margin-top: 0;
+}
+
+.campo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.campo input,
+.campo select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Botones */
+.botones-accion {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.btn-primario {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.btn-secundario {
+    background-color: #6c757d;
+    color: var(--color-blanco);
+}
+
+/* Resultados dinámicos */
+.caja-resultado {
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 6px;
+    background-color: #e8f4fd;
+    border-left: 4px solid var(--color-secundario);
+    font-weight: 500;
+}
+
+.caja-resultado.error {
+    background-color: #fdecea;
+    border-left-color: #d93025;
+    color: #a50e0e;
+}
+
+.caja-resultado.exito {
+    background-color: #e6f4ea;
+    border-left-color: #1e8e3e;
+    color: #137333;
+}
+
+.oculto {
+    display: none;
+}
+
+/* Video responsivo */
+.contenedor-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-top: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.contenedor-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Pie de página */
+.pie-pagina {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+    font-size: 0.95rem;
+}
+
+/* Diseño Adaptable (Media Queries para móviles y tablets) */
+@media (max-width: 768px) {
+    .grupo-inputs,
+    .fila-doble {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .encabezado h1 {
+        font-size: 1.5rem;
+    }
+}
